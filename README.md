@@ -7,3 +7,5 @@ To change what website to embed, you need to change `webview.loadUrl("");` in __
 Then in the menu at the top of Android Studio, go to Build > Make Project then Build > Buid Bundle(s)/APK(s) > APK. Click locate to find APK file.
 
 The application was built in [Android Studio](https://developer.android.com/studio).
+
+The application has been tested on an Emulator within Android Studio, devices emuated was Google Pixel 3 and Google Pixel C.
