@@ -1,6 +1,7 @@
 ## Download
-<a href='https://play.google.com/store/apps/details?id=com.korbsstudio.falixnodes&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'  style="max-width: 100px; height: auto;"/></a>
-<a href="https://galaxy.store/falixnode"><img src="https://galaxy.store/badgeImage" alt="Available on Galaxy Store" style="max-width: 100px; height: auto;"></a>
+[Google Play](https://play.google.com/store/apps/details?id=com.korbsstudio.falixnodes)
+
+[Galaxy Store](http://apps.samsung.com/betastore/openAppDetail.as?appId=com.korbsstudio.falixnodes)
 
 # FalixNodes App for Android
 ![image](https://i.imgur.com/29OYQkM.png)
