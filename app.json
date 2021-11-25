@@ -6,12 +6,18 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "splash": {
+      "image": "./assets/icon/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2970cc"
+    },
     "ios": {
-      "bundleIdentifier": "com.korbsstudio.falixnodesapp"
+      "bundleIdentifier": "com.korbsstudio.falixnodes"
     },
     "android": {
-      "package": "com.korbsstudio.falixnodesapp"
+      "package": "com.korbsstudio.falixnodes"
     }
   },
   "name": "FalixNodes"
 }
+
