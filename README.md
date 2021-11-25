@@ -1,16 +1,1 @@
-## Download
-[Google Play](https://play.google.com/store/apps/details?id=com.korbsstudio.falixnodes)
-
-[Galaxy Store](http://apps.samsung.com/betastore/openAppDetail.as?appId=com.korbsstudio.falixnodes)
-
-# FalixNodes App for Android
-![image](https://i.imgur.com/29OYQkM.png)
-As most apps here, it's just a webview embedding a website.
-
-To change what website to embed, you need to change `webview.loadUrl("");` in __MainActivity.java__, you can find that [here](https://github.com/FalixNodes-Software/Android/blob/master/app/src/main/java/com/korbsstudio/falixnodes/MainActivity.java#L18)
-
-Then in the menu at the top of Android Studio, go to Build > Make Project then Build > Buid Bundle(s)/APK(s) > APK. Click locate to find APK file.
-
-The application was built in [Android Studio](https://developer.android.com/studio).
-
-The application has been tested on an Emulator within Android Studio, devices emuated was Google Pixel 3 and Google Pixel C.
+REVAMPING APPLICATION TO REACT NATIVE
