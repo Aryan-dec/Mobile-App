@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "FalixNodes",
+    "slug": "falixNodes",
+    "version": "2.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.korbsstudio.falixnodesapp"
+    },
+    "android": {
+      "package": "com.korbsstudio.falixnodesapp"
+    }
+  },
+  "name": "FalixNodes"
+}

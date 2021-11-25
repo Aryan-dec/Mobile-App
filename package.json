@@ -1,0 +1,48 @@
+{
+  "name": "FalixNodes",
+  "version": "2.0.0",
+  "main": "index.js",
+  "slug": "Simple and easy to use. Access Falix services all from one place like your client and game panel, help center, status, and more. ",
+  "ios": {
+    "bundleIdentifier": "com.korbsstudio.falixnodes",
+    "buildNumber": "2.0.0"
+  },
+  "scripts": {
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "build:ios": "expo build:ios",
+    "build:android": "expo build:android -c -t app-bundle",
+    "web": "expo start --web",
+    "start": "react-native start"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.0.0-beta3",
+    "@ionic/core": "4.11.10",
+    "@ionic/react": "^5.0.0",
+    "@ionic/react-router": "^5.0.0",
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/drawer": "*",
+    "@react-navigation/elements": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "expo": "~43.0.2",
+    "expo-splash-screen": "~0.13.5",
+    "expo-status-bar": "~1.1.0",
+    "expo-updates": "~0.10.15",
+    "ionicons": "^5.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "0.64.3",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-orientation-locker": "^1.4.0",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "~3.8.0",
+    "react-native-web": "0.17.1",
+    "react-native-webview": "11.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "private": true
+}
