@@ -1,5 +1,5 @@
 import React from 'react';
-import { Appearance, StyleSheet, Image, Linking, Button, View, StatusBar, SafeAreaView, Text, Alert } from 'react-native';
+import { Appearance, StyleSheet, Image, Linking, Button, View, StatusBar, SafeAreaView, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -108,7 +108,7 @@ function ServersScreen({ navigation }) {
 
 function HelpScreen({ navigation }) {
     return (
-        <View style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 }}>
             <WebView
                 allowsBackForwardNavigationGestures
                 useWebKit={true}
@@ -118,7 +118,7 @@ function HelpScreen({ navigation }) {
                     uri: 'https://help.falixnodes.net'
                 }}
             />
-        </View>
+        </SafeAreaView>
     );
 }
 
