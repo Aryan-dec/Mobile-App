@@ -4,6 +4,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { WebView } from 'react-native-webview';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faHouse } from '@fortawesome/pro-duotone-svg-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useHeaderHeight } from '@react-navigation/elements';
@@ -12,25 +14,26 @@ StatusBar.setBackgroundColor("#0996AE")
 
 const MyTheme = {
   dark: false,
-  colors: {
-    primary: '#2970cc',
-    background: 'black',
-    card: 'rgb(23, 23, 23)',
-    text: 'rgb(255, 255, 255)',
-    border: 'rgb(32, 32, 32)',
-    notification: 'rgb(255, 69, 58)',
-  },
+    colors: {
+        primary: '#2970cc',
+        background: 'black',
+        card: 'rgb(23, 23, 23)',
+        text: 'rgb(255, 255, 255)',
+        border: 'rgb(32, 32, 32)',
+        notification: 'rgb(255, 69, 58)',
+    },
 };
+
+const styles = StyleSheet.create({
+    icon: {
+        color: '#2970cc',
+    }
+});
 
 function DashboardScreen({ navigation }) {
   return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <WebView
-            allowsBackForwardNavigationGestures
-            source={{
-              uri: 'https://falixnodes.net/blog-raw/'
-            }}
-        />
+      <SafeAreaView>
+          <FontAwesomeIcon style={ styles.icon } icon={ faHouse } />
       </SafeAreaView>
   );
 }
@@ -73,7 +76,6 @@ function HelpScreen({ navigation }) {
       </SafeAreaView>
   );
 }
-
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 export default function App() {

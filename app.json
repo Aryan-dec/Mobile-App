@@ -3,6 +3,9 @@
     "name": "FalixNodes",
     "slug": "falixNodes",
     "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "githubUrl": "https://github.com/FalixNodes-Software/Mobile-App",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -11,11 +14,22 @@
       "resizeMode": "contain",
       "backgroundColor": "#2970cc"
     },
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "ios": {
-      "bundleIdentifier": "com.korbsstudio.falixnodes"
+      "bundleIdentifier": "com.korbsstudio.falixnodes",
+      "supportsTablet": false
     },
     "android": {
-      "package": "com.korbsstudio.falixnodes"
+      "package": "com.korbsstudio.falixnodes",
+      "permissions": ["READ_EXTERNAL_STORAGE"]
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#000000",
+      "translucent": false
     }
   },
   "name": "FalixNodes"
