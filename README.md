@@ -8,7 +8,7 @@ The application is now being rewritten in React Native, which the developer (Kor
 
 ### Known Issues
 #### iOS
- - Keyboard is white, even if system theme is set to work
+ - Keyboard is white, even if system theme is set to dark
 #### Android
  - If header is hidden, the content is overlapped with the system's status bar
  - The status bar color is black instead of white
