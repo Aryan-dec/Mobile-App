@@ -2,6 +2,8 @@ import React from 'react';
 import { Appearance, StyleSheet, Image, Linking, Button, View, StatusBar, SafeAreaView, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import SettingsList from 'react-native-settings-list';
+import { BlurView } from 'expo-blur';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { WebView } from 'react-native-webview';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -162,7 +164,7 @@ export default function App() {
                       ? 'ios-newspaper'
                       : 'ios-newspaper-outline';
                 } else if (route.name === 'Settings') {
-                  iconName = focused ? 'ios-list-box' : 'ios-list';
+                  iconName = focused ? 'ios-list' : 'ios-list';
                 }
 
                 if (route.name === 'Client Area') {
@@ -170,7 +172,7 @@ export default function App() {
                       ? 'ios-albums'
                       : 'ios-albums-outline';
                 } else if (route.name === 'Settings') {
-                  iconName = focused ? 'ios-list-box' : 'ios-list';
+                  iconName = focused ? 'ios-list' : 'ios-list';
                 }
 
                 if (route.name === 'Servers') {
@@ -178,7 +180,7 @@ export default function App() {
                       ? 'ios-list'
                       : 'ios-list-outline';
                 } else if (route.name === 'Settings') {
-                  iconName = focused ? 'ios-list-box' : 'ios-list';
+                  iconName = focused ? 'ios-list' : 'ios-list';
                 }
 
                   if (route.name === 'Help Center') {
@@ -186,19 +188,17 @@ export default function App() {
                           ? 'ios-help-circle'
                           : 'ios-help-circle-outline';
                   } else if (route.name === 'Settings') {
-                      iconName = focused ? 'ios-list-box' : 'ios-list';
+                      iconName = focused ? 'ios-list' : 'ios-list';
                   }
 
                   if (route.name === 'Beta') {
                       iconName = focused
-                          ? 'ios-bug'
-                          : 'ios-bug-outline';
+                          ? 'ios-list'
+                          : 'ios-list-outline';
                   } else if (route.name === 'Settings') {
-                      iconName = focused ? 'ios-list-box' : 'ios-list';
+                      iconName = focused ? 'ios-list' : 'ios-list';
                   }
-
-                // You can return any component that you like here!
-                return <Ionicons name={iconName} size={size} color={color} />;
+                  return <Ionicons name={iconName} size={size} color={color} />;
               },
               tabBarActiveTintColor: '#2970cc',
               tabBarInactiveTintColor: 'gray',
@@ -208,7 +208,7 @@ export default function App() {
           <Tab.Screen name="Client Area" component={ClientScreen} options={{headerShown: headerArea}} />
           <Tab.Screen name="Servers" component={ServersScreen} options={{headerShown: headerArea}} />
             <Tab.Screen name="Help Center" component={HelpScreen} options={{headerShown: headerArea}} />
-            <Tab.Screen name="Beta" component={aboutScreen} options={{headerShown: false}} />
+            <Tab.Screen name="Settings" component={aboutScreen} options={{headerShown: true, headerBlurEffect: 'regular' }} />
         </Tab.Navigator>
       </NavigationContainer>
   );
