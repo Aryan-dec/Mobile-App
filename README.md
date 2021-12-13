@@ -10,9 +10,9 @@ The application is now being rewritten in React Native, which the developer (Kor
 #### iOS
  - Keyboard is white, even if system theme is set to dark
 #### Android
- - If header is hidden, the content is overlapped with the system's status bar
- - The status bar color is black instead of white
- - There are no back buttons or any other controls for webviews
+ - ~~If header is hidden, the content is overlapped with the system's status bar~~
+ - ~~The status bar color is black instead of white~~
+ - ~~There are no back buttons or any other controls for webviews~~
 
 ## Screenshots
 | Home | Client Area  |Servers | Help Center |
