@@ -1,37 +1,34 @@
 {
   "expo": {
     "name": "FalixNodes",
-    "slug": "falixNodes",
-    "version": "2.0.0",
+    "slug": "FalixNodes",
+    "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "githubUrl": "https://github.com/FalixNodes-Software/Mobile-App",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "icon": "./assets/images/icon.png",
+    "scheme": "falixnodes",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/icon/icon.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#2970cc"
     },
-    "platforms": [
-      "ios",
-      "android",
-      "web"
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.korbsstudio.falixnodes",
-      "supportsTablet": false
+      "supportsTablet": true
     },
     "android": {
-      "package": "com.korbsstudio.falixnodes",
-      "permissions": ["READ_EXTERNAL_STORAGE"]
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#2970cc"
+      }
     },
-    "androidStatusBar": {
-      "backgroundColor": "#000000",
-      "translucent": false
+    "web": {
+      "favicon": "./assets/images/favicon.png"
     }
-  },
-  "name": "FalixNodes"
+  }
 }
-
