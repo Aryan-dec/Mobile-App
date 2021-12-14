@@ -16,11 +16,14 @@ export default function ClientScreen({ navigation }) {
   const reload = () => {webViewRef.current.reload();};
   return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.os}> Client Area
-          <FontAwesome.Button style={styles.button} name="arrow-left" backgroundColor="#3b5998" onPress={goback}></FontAwesome.Button>
-          <FontAwesome.Button style={styles.button} name="arrow-right" backgroundColor="#3b5998" onPress={goback}></FontAwesome.Button>
-          <FontAwesome.Button style={styles.button} name="refresh" backgroundColor="#3b5998" onPress={goback}></FontAwesome.Button>
-        </Text>
+        <Text style={styles.osTextH}> Client Area</Text>
+        <View style={styles.rightEnd}>
+          <View style={styles.osButtonH}>
+            <FontAwesome.Button style={styles.button} name="arrow-left" backgroundColor="#3b5998" onPress={goback}></FontAwesome.Button>
+            <FontAwesome.Button style={styles.button} name="arrow-right" backgroundColor="#3b5998" onPress={goback}></FontAwesome.Button>
+            <FontAwesome.Button style={styles.button} name="refresh" backgroundColor="#3b5998" onPress={goback}></FontAwesome.Button>
+          </View>
+        </View>
         <WebView
           natvieID="clientWebview"
           ref={webViewRef}
@@ -38,8 +41,21 @@ export default function ClientScreen({ navigation }) {
 
 
 const styles = StyleSheet.create({
-  os: {
-    display: Platform.OS === 'ios' ? 'none' : 'flex'
+  osButtonH: {
+    display: Platform.OS === 'ios' ? 'none' : 'flex',
+    flexDirection: 'row',
+    marginTop: -36
+  },
+  osTextH: {
+    display: Platform.OS === 'ios' ? 'none' : 'flex',
+    flexDirection: 'row',
+    fontSize: 24,
+    paddingLeft: 24
+  },
+  rightEnd: {
+    justifyContent: 'flex-end',
+    display: 'flex',
+    flexDirection: 'row'
   },
   container: {
     flex: 1,
@@ -47,7 +63,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   separator: {
     marginVertical: 30,
@@ -58,5 +74,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     borderLeftWidth: 5,
     borderRightWidth: 12,
+    padding: 15
   }
 });
