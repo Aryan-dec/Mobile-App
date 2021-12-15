@@ -1,21 +1,12 @@
 import * as React from 'react';
-import { useRef, Component, useState } from "react";
-import { Alert, Button, useColorScheme, Platform, Text, SafeAreaView, View, StyleSheet, StatusBar } from 'react-native';
-import { NavigationContainer, DefaultTheme, DarkTheme, useTheme} from '@react-navigation/native';
 import { WebView } from 'react-native-webview';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useRef, Component, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-
-import { faInfoCircle } from '@fortawesome/pro-duotone-svg-icons'
-import { faNewspaper } from '@fortawesome/pro-duotone-svg-icons'
-import { faUser } from '@fortawesome/pro-duotone-svg-icons'
-import { faSlidersV } from '@fortawesome/pro-duotone-svg-icons'
-import { faLifeRing } from '@fortawesome/pro-duotone-svg-icons'
-
-import { faSpinner } from '@fortawesome/pro-duotone-svg-icons'
-import { faArrowLeft } from '@fortawesome/pro-duotone-svg-icons'
-import { faArrowRight } from '@fortawesome/pro-duotone-svg-icons'
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer, DefaultTheme, DarkTheme, useTheme} from '@react-navigation/native';
+import { Alert, Button, useColorScheme, Platform, Text, SafeAreaView, View, StyleSheet, StatusBar } from 'react-native';
+import { faInfoCirclefaNewspaper, faUser, faSlidersV, faLifeRing, faSpinner, faArrowLeft, faArrowRight } from '@fortawesome/pro-duotone-svg-icons'
+const Tab = createBottomTabNavigator();
 StatusBar.setBarStyle('light-content', true);
 
 if (Platform.OS === 'ios') {
@@ -23,6 +14,23 @@ if (Platform.OS === 'ios') {
 } else {
   global.OSHeader = true
 }
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black'
+  },
+  webView: {
+    display: 'flex',
+    minWidth: '100%'
+  },
+  headerButtons: {
+    paddingHorizontal: 25,
+    color: 'white'
+  }
+});
 
 function NewsScreen({ navigation }) {
   React.useLayoutEffect(() => {
@@ -38,7 +46,7 @@ function NewsScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <WebView
-          source={{ uri: 'https://client.falixnodes.net' }}
+          source={{ uri: 'https://falixnodes.net/blog-app/' }}
           javaScriptEnabled={true}
           style={styles.webView}
           scalesPageToFit={true}
@@ -131,25 +139,6 @@ function HelpScreen({ navigation }) {
   );
 }
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black'
-  },
-  webView: {
-    display: 'flex',
-    minWidth: '100%'
-  },
-  headerButtons: {
-    paddingHorizontal: 25,
-    color: 'white'
-  }
-});
-
-const Tab = createBottomTabNavigator();
-
 function MyTabs() {
   return (
     <Tab.Navigator>
@@ -185,3 +174,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
