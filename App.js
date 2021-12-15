@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme, useTheme} from '@react-navigation/native';
 import { Alert, Button, useColorScheme, Platform, Text, SafeAreaView, View, StyleSheet, StatusBar } from 'react-native';
-import { faInfoCirclefaNewspaper, faUser, faSlidersV, faLifeRing, faSpinner, faArrowLeft, faArrowRight } from '@fortawesome/pro-duotone-svg-icons'
+import { faInfoCircle, faNewspaper, faUser, faSlidersH, faLifeRing, faSpinner, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 const Tab = createBottomTabNavigator();
 StatusBar.setBarStyle('light-content', true);
 
@@ -154,7 +154,7 @@ function MyTabs() {
       }} />
       <Tab.Screen name="Game Panel" component={GameScreen}
       options={{
-        tabBarIcon: ({ tintColor }) => <FontAwesomeIcon style={styles.headerButtons} icon={ faSlidersV } />,
+        tabBarIcon: ({ tintColor }) => <FontAwesomeIcon style={styles.headerButtons} icon={ faSlidersH } />,
         headerShown: OSHeader
       }} />
       <Tab.Screen name="Help Center" component={HelpScreen}
