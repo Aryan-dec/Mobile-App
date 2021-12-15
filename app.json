@@ -2,18 +2,24 @@
   "expo": {
     "name": "FalixNodes App",
     "slug": "falixnodes-app",
-    "version": "2.0.0",
+    "version": "2.0.12",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "falixnodes",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#2970cc"
     },
+    "androidNavigationBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#131013"
+    },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "enabled": true,
+      "url": "https://updates.korbsstudio.com/falix-app/"
     },
     "assetBundlePatterns": [
       "**/*"
