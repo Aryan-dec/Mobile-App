@@ -1,0 +1,92 @@
+.GreyRowBox-sc-1xo9c6v-0.ServerRow__StatusIndicatorBox-sc-1ibsw91-2.fIgLCo.hzdUGR.DashboardContainer___StyledServerRow-sc-1topkxf-2 {
+    border: 4px #1f293378 solid !important;
+    border-radius: 12px !important;
+}
+.status-bar {
+    height: 15px !important;
+    width: 15px !important;
+    margin: 15px !important;
+}
+.active {
+    box-shadow: inherit !important;
+    background: rgb(47, 60, 72) none repeat scroll 0% 0% !important;
+    border-radius: 4px !important;
+}
+.hwHEW > a, .hwHEW > button, .hwHEW > .navigation-link {
+    height: 50px !important;
+    width: 50px !important;
+    justify-content: center !important;
+    border-radius: 7px !important;
+}
+.NavigationBar__Navigation-sc-tupl2x-0.eJbaej {
+    padding: 4px 0px !important;
+}
+
+.SubNavigation-sc-lfuaoi-0.bEmDAU.fade-appear-done.fade-enter-done, .SubNavigation-sc-lfuaoi-0.bEmDAU {
+    padding: 7px 0px !important;
+    margin: 18px !important;
+    border-radius: 4px !important;
+    width: initial !important;
+}
+.FileManagerContainer___StyledDiv2-sc-1ehiwhq-2.bhVuZs {
+    width: fit-content !important;
+}
+.FileObjectRow___StyledNavLink-sc-wrdnyp-3.gywIgv.active {
+    background: inherit !important;
+}
+
+.FileManagerStatus___StyledDiv2-sc-2hj8wh-2.jdvlyv {
+    position: fixed !important;
+    bottom: -10px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 90px !important;
+    border-radius: 10px 10px 0px 0px !important;
+    padding: 0px 16px !important;
+    background: #5f6a75 !important;
+}
+
+.DropdownMenu___StyledDiv-sc-1ojgpy2-1.jQKbFq.fade-enter-done {
+    position: fixed !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    border-radius: 16px 16px 0px 0px !important;
+    border: none !important;
+    background: #5f6a75 !important;
+    color: white !important;
+    box-shadow: 0px -3px 30px 0px #0003 !important;
+    padding: 10px 20px !important;
+}
+.FileDropdownMenu__StyledRow-sc-17ln8oh-0.hVLyBB, .FileDropdownMenu__StyledRow-sc-17ln8oh-0.fNOsOO {
+    padding: 14px 0px !important;
+}
+.FileDropdownMenu__StyledRow-sc-17ln8oh-0.hVLyBB:hover, .FileDropdownMenu__StyledRow-sc-17ln8oh-0.fNOsOO:hover {
+    background: transparent !important;
+    color: gray !important;
+}
+.DropdownMenu___StyledDiv-sc-1ojgpy2-1.jQKbFq.fade-enter-done::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0% !important;
+    z-index: -10 !important;
+    cursor: default !important;
+}
+
+.ProgressBar___StyledDiv-sc-14ayc3f-1.hckdEu {
+    height: 4px !important;
+    pointer-events: none !important;
+}
+.bFpbIm {
+    background-color: #286ace !important;
+    box-shadow: none !important;
+}
+.MassActionsBar___StyledDiv2-sc-1x2nl3g-1.fJaIKE {
+    width: 100% !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+}
