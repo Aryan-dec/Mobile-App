@@ -72,7 +72,7 @@ function SettingsScreen({ navigation }) {
       </View>
       <View style={styles.textOption}>
         <Text style={{color: 'white'}}>Version</Text>
-        <Text style={{color: 'white', opacity: 0.5}}>v2.0 Alpha 5</Text>
+        <Text style={{color: 'white', opacity: 0.5}}>v2.0 Beta 1</Text>
       </View>
       <View style={styles.textOption}>
         <Text onPress={() =>navigation.navigate('Your Account')} style={styles.settingButtons}>Your Account</Text>
@@ -136,6 +136,8 @@ function ReportScreen({ navigation }) {
   );
 }
 
+
+
 function NewsScreen({ navigation }) {
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -179,12 +181,19 @@ function ClientScreen({ navigation }) {
   const goback = () => {clientWebview.current.goBack();};
   const goforward = () => {clientWebview.current.goForward();};
   const reload = () => {clientWebview.current.reload();};
+  let jsCode = `
+  var g = document.getElementById("top");
+  g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/game-panel.css'>");`;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <WebView
           ref={clientWebview}
           source={{ uri: 'https://client.falixnodes.net' }}
+          javaScriptEnabled={true}
+          javaScriptEnabledAndroid={true}
+          injectedJavaScript={jsCode}
+          onMessage={(event) => {}}
           javaScriptEnabled={true}
           style={styles.webView}
           scalesPageToFit={true}
@@ -213,6 +222,9 @@ function GameScreen({ navigation }) {
   const goback = () => {gameWebview.current.goBack();};
   const goforward = () => {gameWebview.current.goForward();};
   const reload = () => {gameWebview.current.reload();};
+  let jsCode = `
+  var g = document.getElementById("modal-portal");
+  g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/game-panel.css'>");`;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -220,6 +232,9 @@ function GameScreen({ navigation }) {
           ref={gameWebview}
           source={{ uri: 'https://panel.falixnodes.net' }}
           javaScriptEnabled={true}
+          javaScriptEnabledAndroid={true}
+          injectedJavaScript={jsCode}
+          onMessage={(event) => {}}
           style={styles.webView}
           scalesPageToFit={true}
           startInLoadingState={false}
@@ -231,9 +246,6 @@ function GameScreen({ navigation }) {
 }
 
 function HelpScreen({ navigation }) {
-const INJECTED_JAVASCRIPT = `(function() {
-  document.getElementsById('article-icon').style.display = 'none !important';
-})();`;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -258,8 +270,16 @@ function StatusScreen({ navigation }) {return (<SafeAreaView style={styles.conta
   startInLoadingState={false}
   allowsBackForwardNavigationGestures/>
 </View></SafeAreaView>);}
-function AccountScreen({ navigation }) {return (<SafeAreaView style={styles.container}><View style={styles.container}><WebView
+function AccountScreen({ navigation })
+{let jsCode = `
+var g = document.getElementById("top");
+g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/game-panel.css'>");`;
+  return (<SafeAreaView style={styles.container}><View style={styles.container}><WebView
   source={{ uri: 'https://client.falixnodes.net/profile/settings' }}
+  javaScriptEnabled={true}
+  javaScriptEnabledAndroid={true}
+  injectedJavaScript={jsCode}
+  onMessage={(event) => {}}
   javaScriptEnabled={true}
   style={styles.webView}
   scalesPageToFit={true}
