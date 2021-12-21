@@ -6,6 +6,10 @@ It's a quick way to access all FalixNodes from one area, much like FalixNodes De
 ## FalixNodes App v2.0 Alpha
 The application is now being rewritten in React Native, which the developer (Korbs Studio) is still learning, thus issues are to be expected.
 
+### To Do List
+ - Add Onboarding screen
+ - Add native language support
+
 ## Building
 ### Requirements
  - NodeJS

@@ -1,0 +1,15 @@
+{
+    "cli": {
+      "version": ">= 0.34.0"
+    },
+    "submit": {
+      "production": {
+        "ios": {
+          "appleId": "korbsstudio@onmail.com",
+          "ascAppId": "1600580700",
+          "appleTeamId": "F2M4QF2K4L"
+        }
+      }
+    }
+  }
+  
