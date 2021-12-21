@@ -5,7 +5,7 @@ import { hideNavigationBar } from 'react-native-navigation-bar-color';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme, useTheme, createStackNavigator } from '@react-navigation/native';
-import { Alert, Button, useColorScheme, Platform, Text, SafeAreaView, View, ScrollView, StyleSheet, StatusBar, Linking } from 'react-native';
+import { ActivityIndicator, Alert, Button, useColorScheme, Platform, Text, SafeAreaView, View, ScrollView, StyleSheet, StatusBar, Linking } from 'react-native';
 import { faInfoCircle, faNewspaper, faUser, faServer, faSlidersH, faLifeRing, faRefresh, faArrowLeft, faArrowRight } from '@fortawesome/pro-thin-svg-icons';
 const Tab = createBottomTabNavigator();
 StatusBar.setBarStyle('light-content', true);
@@ -63,6 +63,24 @@ var styles = StyleSheet.create({
     display: Platform.OS === 'ios' ? 'none' : 'flex'
   }
 });
+
+const ActivityIndicatorElement = () => {
+  return (
+  <ActivityIndicator
+    style={{
+    backgroundColor: 'black',
+    flex: 1,
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center' }}
+    size="small"
+  />
+  );
+}
 
 function SettingsScreen({ navigation }) {
   return (
@@ -158,6 +176,9 @@ function NewsScreen({ navigation }) {
           scalesPageToFit={true}
           startInLoadingState={false}
           allowsBackForwardNavigationGestures
+          domStorageEnabled={true}
+          renderLoading={ActivityIndicatorElement}
+          startInLoadingState={true}
         />
       </View>
     </SafeAreaView>
@@ -183,7 +204,7 @@ function ClientScreen({ navigation }) {
   const reload = () => {clientWebview.current.reload();};
   let jsCode = `
   var g = document.getElementById("top");
-  g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/game-panel.css'>");`;
+  g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/client-panel.css'>");`;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
@@ -199,6 +220,9 @@ function ClientScreen({ navigation }) {
           scalesPageToFit={true}
           startInLoadingState={false}
           allowsBackForwardNavigationGestures
+          domStorageEnabled={true}
+          renderLoading={ActivityIndicatorElement}
+          startInLoadingState={true}
         />
       </View>
     </SafeAreaView>
@@ -206,6 +230,8 @@ function ClientScreen({ navigation }) {
 }
 
 function GameScreen({ navigation }) {
+
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -223,12 +249,16 @@ function GameScreen({ navigation }) {
   const goforward = () => {gameWebview.current.goForward();};
   const reload = () => {gameWebview.current.reload();};
   let jsCode = `
-  var g = document.getElementById("modal-portal");
-  g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/game-panel.css'>");`;
+  if(location.href.match(/(falixnodes).net/)){} else {setTimeout(() => {location.href = 'https://falixnodes.net/app/domain-restriction.html'}, 500);}
+  var gamePanelLogin = document.getElementById("app");
+  var gamePanel = document.getElementById("modal-portal");
+  gamePanelLogin.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://falixnodes.net/assets/css/app/game-panel.css'>");
+  gamePanel.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://falixnodes.net/assets/css/app/game-panel.css'>");`;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <WebView
+          onError={() => Alert.alert("Page failed to load", "The page you're trying to view has failed to load. Either caused by a connection error or the a server-side issue.", [{text: 'OK'}])}
           ref={gameWebview}
           source={{ uri: 'https://panel.falixnodes.net' }}
           javaScriptEnabled={true}
@@ -239,6 +269,9 @@ function GameScreen({ navigation }) {
           scalesPageToFit={true}
           startInLoadingState={false}
           allowsBackForwardNavigationGestures
+          domStorageEnabled={true}
+          renderLoading={ActivityIndicatorElement}
+          startInLoadingState={true}
         />
       </View>
     </SafeAreaView>
@@ -256,6 +289,9 @@ function HelpScreen({ navigation }) {
           scalesPageToFit={true}
           startInLoadingState={false}
           allowsBackForwardNavigationGestures
+          domStorageEnabled={true}
+          renderLoading={ActivityIndicatorElement}
+          startInLoadingState={true}
         />
       </View>
     </SafeAreaView>
@@ -268,7 +304,10 @@ function StatusScreen({ navigation }) {return (<SafeAreaView style={styles.conta
   style={styles.webView}
   scalesPageToFit={true}
   startInLoadingState={false}
-  allowsBackForwardNavigationGestures/>
+  allowsBackForwardNavigationGestures
+  domStorageEnabled={true}
+  renderLoading={ActivityIndicatorElement}
+  startInLoadingState={true}/>
 </View></SafeAreaView>);}
 function AccountScreen({ navigation })
 {let jsCode = `
@@ -284,7 +323,10 @@ g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbs
   style={styles.webView}
   scalesPageToFit={true}
   startInLoadingState={false}
-  allowsBackForwardNavigationGestures/>
+  allowsBackForwardNavigationGestures
+  domStorageEnabled={true}
+  renderLoading={ActivityIndicatorElement}
+  startInLoadingState={true}/>
 </View></SafeAreaView>);}
 function ChangelogScreen({ navigation }) {return (<SafeAreaView style={styles.container}><View style={styles.container}><WebView
   source={{ uri: 'https://desktop.falixnodes.net/mobile/changelog/' }}
@@ -292,7 +334,10 @@ function ChangelogScreen({ navigation }) {return (<SafeAreaView style={styles.co
   style={styles.webView}
   scalesPageToFit={true}
   startInLoadingState={false}
-  allowsBackForwardNavigationGestures/>
+  allowsBackForwardNavigationGestures
+  domStorageEnabled={true}
+  renderLoading={ActivityIndicatorElement}
+  startInLoadingState={true}/>
 </View></SafeAreaView>);}
 
 function MyTabs() {
