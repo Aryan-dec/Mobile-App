@@ -23,7 +23,7 @@ jobs:
           expo-cache: true
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: Build on EAS
         run: npx eas-cli build --platform all --non-interactive
