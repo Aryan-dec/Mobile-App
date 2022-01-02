@@ -21,6 +21,9 @@ jobs:
           expo-version: 5.0.3
           expo-token: ${{ secrets.EXPO_TOKEN }}
           expo-cache: true
+          
+      - name: Config NPM - Font Awesome
+        run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/ && npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONT_AWESOME_AUTH_TOKEN }}
 
       - name: Install dependencies
         run: yarn install
