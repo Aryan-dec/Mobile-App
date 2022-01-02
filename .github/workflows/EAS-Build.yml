@@ -18,12 +18,12 @@ jobs:
       - name: Setup Expo
         uses: expo/expo-github-action@v5
         with:
-          expo-version: 4.x
+          expo-version: 5.0.3
           expo-token: ${{ secrets.EXPO_TOKEN }}
           expo-cache: true
 
       - name: Install dependencies
-        run: npm i
+        run: yarn install
 
       - name: Build on EAS
         run: npx eas-cli build --platform all --non-interactive
