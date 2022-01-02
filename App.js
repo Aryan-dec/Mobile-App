@@ -90,7 +90,7 @@ function SettingsScreen({ navigation }) {
       </View>
       <View style={styles.textOption}>
         <Text style={{color: 'white'}}>Version</Text>
-        <Text style={{color: 'white', opacity: 0.5}}>v2.0 Beta 1</Text>
+        <Text style={{color: 'white', opacity: 0.5}}>v2.0 Alpha 6</Text>
       </View>
       <View style={styles.textOption}>
         <Text onPress={() =>navigation.navigate('Your Account')} style={styles.settingButtons}>Your Account</Text>
@@ -154,8 +154,6 @@ function ReportScreen({ navigation }) {
   );
 }
 
-
-
 function NewsScreen({ navigation }) {
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -203,14 +201,17 @@ function ClientScreen({ navigation }) {
   const goforward = () => {clientWebview.current.goForward();};
   const reload = () => {clientWebview.current.reload();};
   let jsCode = `
+  if(location.href.match(/(falixnodes|google).net|.com/)){} else {setTimeout(() => {location.href = 'https://falixnodes.net/app/domain-restriction.html'}, 500);}
   var g = document.getElementById("top");
   g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/client-panel.css'>");`;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <WebView
+          // onError={() => Alert.alert("Page failed to load", "The page you're trying to view has failed to load. Either caused by a connection error or the a server-side issue.", [{text: 'OK'}])}
           ref={clientWebview}
           source={{ uri: 'https://client.falixnodes.net' }}
+          userAgent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
           javaScriptEnabled={true}
           javaScriptEnabledAndroid={true}
           injectedJavaScript={jsCode}
@@ -230,8 +231,6 @@ function ClientScreen({ navigation }) {
 }
 
 function GameScreen({ navigation }) {
-
-
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -258,7 +257,7 @@ function GameScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
         <WebView
-          onError={() => Alert.alert("Page failed to load", "The page you're trying to view has failed to load. Either caused by a connection error or the a server-side issue.", [{text: 'OK'}])}
+          // onError={() => Alert.alert("Page failed to load", "The page you're trying to view has failed to load. Either caused by a connection error or the a server-side issue.", [{text: 'OK'}])}
           ref={gameWebview}
           source={{ uri: 'https://panel.falixnodes.net' }}
           javaScriptEnabled={true}
@@ -312,7 +311,7 @@ function StatusScreen({ navigation }) {return (<SafeAreaView style={styles.conta
 function AccountScreen({ navigation })
 {let jsCode = `
 var g = document.getElementById("top");
-g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/game-panel.css'>");`;
+g.insertAdjacentHTML("afterend", "<link rel='stylesheet' href='https://cdn.korbsstudio.com/falix/client-panel.css'>");`;
   return (<SafeAreaView style={styles.container}><View style={styles.container}><WebView
   source={{ uri: 'https://client.falixnodes.net/profile/settings' }}
   javaScriptEnabled={true}
